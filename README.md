@@ -5,9 +5,13 @@ This project demonstrates the use of Playwright for automated testing in conjunc
 
 ✔️Features
 🚀Cross-Browser Testing: Run tests across all major browsers including Chrome, Firefox, and Safari, ensuring compatibility and performance.
+
 🚀Parallel Execution: Tests can be executed in parallel, significantly reducing the time required for test runs.
+
 🚀Page Object Model (POM): Utilizes the Page Object Model design pattern to enhance test structure and maintainability, making it easier to manage complex test suites.
+
 🚀Built-in Reporting: Automatically generates reports, including screenshots and videos of test failures, to aid in debugging.
+
 🚀Easy Setup: Quick installation and configuration process using Node.js and npm.
 
 🚀Getting Started
