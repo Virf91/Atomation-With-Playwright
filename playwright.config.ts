@@ -58,6 +58,19 @@ export default defineConfig({
       viewport: { width: 390, height: 844 },  
        },
     },
+
+    {
+      name:'API Tests',
+      testMatch: ['/API-testing/**/*'],
+      use: {
+        baseURL: 'http://api.github.com',
+        extraHTTPHeaders: {
+          'Accept':'application/vnd.github.v3+json',
+          'Authorization': `token ${process.env.API_TOKEN}`
+        }
+      }
+
+    }
     /* Test against mobile viewports. */// esto lo pudo usar para pruebas en mobile
     // {
     //   name: 'Mobile Chrome',

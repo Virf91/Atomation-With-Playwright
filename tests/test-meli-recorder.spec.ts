@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Test using recorder', async ({ page }) => {
   await page.goto('https://www.mercadolibre.com.ar/');
   await page.getByPlaceholder('Buscar productos, marcas y má').click();
   await page.getByPlaceholder('Buscar productos, marcas y má').fill('playstation 5');
