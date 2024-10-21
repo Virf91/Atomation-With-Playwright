@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+console.log('API_TOKEN:', process.env.API_TOKEN);
 
 /**
  * Read environment variables from file.
@@ -61,16 +62,16 @@ export default defineConfig({
 
     {
       name:'API Tests',
-      testMatch: ['/API-testing/**/*'],
+      testMatch: 'APITests/**/*',
       use: {
-        baseURL: 'http://api.github.com',
+        baseURL: 'https://api.github.com',
         extraHTTPHeaders: {
-          'Accept':'application/vnd.github.v3+json',
-          'Authorization': `token ${process.env.API_TOKEN}`
+      'Accept': 'application/vnd.github.v3+json',
+      'Authorization': `token ${process.env.API_TOKEN}`,
         }
       }
-
-    }
+    },
+    
     /* Test against mobile viewports. */// esto lo pudo usar para pruebas en mobile
     // {
     //   name: 'Mobile Chrome',
@@ -98,4 +99,5 @@ export default defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+  
 });

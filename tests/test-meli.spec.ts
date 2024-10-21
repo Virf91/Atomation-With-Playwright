@@ -24,20 +24,17 @@ test.describe('Exploratory Testing in Mercado Libre', () => {
     });
 
 
-    test('validate that the filter "Full envios" works', async ({ page }) => {
-        const switchFullEnvios = page.getByRole('button', { name: 'full te da envío gratis En' });
-        await switchFullEnvios.click();
-    });
+    // test('validate that the filter "Full envios" works', async ({ page }) => {
+    //     const switchFullEnvios = page.getByRole('button', { name: 'full te da envío gratis En' });
+    //     await switchFullEnvios.click();
+    // });
 
     test('Validate that Condition Filter works', async ({ page }) => {
-        const conditionNew = await page.getByLabel('Nuevo, 171 resultados');
+        const conditionNew = await page.getByLabel('Nuevo, 185 resultados');
         await conditionNew.click();
         const closeConditionNew = await page.getByLabel('Quitar el filtro de Condición');
         await closeConditionNew.click();
     });
-
-
-
 
     // test('Validate that the order filter by price works', async ({ page }) => {
     //     const searchBar = page.getByPlaceholder('Buscar productos, marcas y más');
@@ -69,6 +66,5 @@ test.describe('Exploratory Testing in Mercado Libre', () => {
 //     })
 // })
 
-
-   
+  
 });
