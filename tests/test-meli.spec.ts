@@ -9,6 +9,7 @@ test.describe('Exploratory Testing in Mercado Libre', () => {
         const searchBar = page.getByPlaceholder('Buscar productos, marcas y más');
         await searchBar.type('Playstation 5');
         await page.keyboard.press('Enter');
+        await page.getByRole('button', { name: 'Más tarde' }).click();
 
     });
 
@@ -36,15 +37,12 @@ test.describe('Exploratory Testing in Mercado Libre', () => {
         await closeConditionNew.click();
     });
 
-    // test('Validate that the order filter by price works', async ({ page }) => {
-    //     const searchBar = page.getByPlaceholder('Buscar productos, marcas y más');
-    //     await searchBar.type('Playstation 5');
-    //     await page.keyboard.press('Enter');
-    //     const sortButton = page.locator('div').filter({ hasText: /^Más relevantesMás relevantes$/ }).first()
-    //     await sortButton.click();
-    //     const priceFilter = page.locator('div').filter({ hasText: /^Mayor precio$/ }).first()
-    //     await priceFilter.click();
-    // });
+    test('Validate that the order filter by price works', async ({ page }) => {
+        const sortButton = page.getByLabel('Más relevantes');
+        await sortButton.click();
+        const priceFilter = page.getByText('Menor precio');
+        await priceFilter.click();
+    });
 
 //para validar que esten todos los items podria utilizar:
 // test('Los items del dropdown son los esperados', async ({ page }) => {
